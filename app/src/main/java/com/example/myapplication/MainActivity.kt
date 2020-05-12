@@ -2,29 +2,44 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.res.ResourcesCompat
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayoutMediator
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val menuTeks = arrayOf("fragment 1", "fragment 2", "fragment 3")
-    val menuIcon = arrayOf(R.drawable.ic_github, R.drawable.ic_friends, R.drawable.ic_profile)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val adapter = ViewPagerAdapter(this)
-        view_pager.setAdapter(adapter)
-        TabLayoutMediator(tab_layout, view_pager,
-            TabLayoutMediator.TabConfigurationStrategy { tab, position ->
-                tab.text =
-                    menuTeks[position]
-                tab.icon = ResourcesCompat.getDrawable(resources, menuIcon[position], null)
-            }).attach()
+        val adapter = MyViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(Fragment1(), "Friends")
+        adapter.addFragment(Fragment2(), "Github")
+        adapter.addFragment(Fragment3(), "Profile")
+        view_pager.adapter = adapter
+        tabs.setupWithViewPager(view_pager)
     }
 
+    class  MyViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm){
 
+        private val fragmentList : MutableList<Fragment> = ArrayList()
+        private val titleList : MutableList<String> = ArrayList()
+
+        override fun getItem(position: Int): Fragment {
+            return fragmentList[position]
+        }
+
+        override fun getCount(): Int {
+            return fragmentList.size
+        }
+        fun addFragment(fragment: Fragment,title:String){
+            fragmentList.add(fragment)
+            titleList.add(title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence? {
+             return titleList[position]
+        }
+    }
 }

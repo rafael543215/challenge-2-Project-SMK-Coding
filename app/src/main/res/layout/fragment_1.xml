@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragment_1">
+    tools:context=".Fragment1">
 
-
+    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tv_page1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Ini fragment github" />
+        android:text="Ini Page 1"
+        android:gravity="center"
+        android:textSize="40sp"/>
 
 </FrameLayout>
