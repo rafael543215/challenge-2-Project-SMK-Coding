@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Fragment3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_page1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ini Page Gejala"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:layout_margin="16dp" />
+
+    </LinearLayout>
+</ScrollView>

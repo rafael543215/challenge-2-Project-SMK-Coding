@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.graphics.drawable.Icon
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,9 +15,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val adapter = MyViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(Fragment1(), "Friends")
-        adapter.addFragment(Fragment2(), "Github")
-        adapter.addFragment(Fragment3(), "Profile")
+        adapter.addFragment(Fragment1(), "Rasio")
+        adapter.addFragment(Fragment2(), "Beranda")
+        adapter.addFragment(Fragment3(), "Gejala")
         view_pager.adapter = adapter
         tabs.setupWithViewPager(view_pager)
     }
