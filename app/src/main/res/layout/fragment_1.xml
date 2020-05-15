@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/swipeRefreshLayout"
     tools:context=".Fragment1"
     >
 
     <!-- TODO: Update blank fragment layout -->
 
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="match_parent"
@@ -44,97 +47,21 @@
         android:layout_marginTop="130dp"
         android:background="@color/white2"
         >
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_margin="10dp"
-            android:padding="10dp"
             android:background="@drawable/beranda_background">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listAttributes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:padding="5dp"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Korban Terinfeksi"
-                    android:fontFamily="@font/archivo_black"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:id="@+id/tv_korbanterinfeksi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="dummy"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/archivo_black"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp"
-                android:layout_margin="20dp"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Korban Tewas"
-                    android:fontFamily="@font/archivo_black"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:id="@+id/tv_korbantewas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="dummy"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/archivo_black"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Korban Sembuh"
-                    android:fontFamily="@font/archivo_black"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:id="@+id/tv_korbansembuh"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="dummy"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/archivo_black"
-                    android:textColor="@color/black"/>
-            </LinearLayout>
-        </LinearLayout>
+                android:scrollbars="vertical">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -149,5 +76,5 @@
             android:src="@drawable/stay_home"
             />
     </LinearLayout>
-
 </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
