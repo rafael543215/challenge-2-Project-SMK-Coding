@@ -22,6 +22,6 @@ class Fragment2 : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        tv_page1.text = "This is Page 2"
+        tv_page2.text = "This is Page 2"
     }
 }

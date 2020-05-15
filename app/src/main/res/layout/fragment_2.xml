@@ -27,13 +27,13 @@
         app:layout_constraintTop_toBottomOf="@+id/background">
 
         <TextView
-            android:id="@+id/tv_page1"
+            android:id="@+id/tv_page2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ini Page Gejala"
+            android:layout_margin="16dp"
             android:gravity="center_horizontal"
-            android:textSize="18sp"
-            android:layout_margin="16dp" />
+            android:text="Ini Page Gejala"
+            android:textSize="18sp" />
 
     </LinearLayout>
     
