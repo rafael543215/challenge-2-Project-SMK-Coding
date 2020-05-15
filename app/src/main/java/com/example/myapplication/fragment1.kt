@@ -1,7 +1,6 @@
 package com.example.myapplication
 
-import Attributes
-import CovidDataItem
+import android.content.Intent
 import android.os.Bundle
 import retrofit2.Call
 import retrofit2.Callback
@@ -10,13 +9,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import androidx.annotation.Nullable
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.data.DataService
-import com.example.myapplication.data.apiRequest
-import com.example.myapplication.data.httpClient
+import com.example.myapplication.data.*
+import com.example.myapplication.item.CovidConfirmedItem
 import com.example.myapplication.util.dissmissLoading
 import com.example.myapplication.util.showLoading
 import com.example.myapplication.util.tampilToast
@@ -28,7 +24,6 @@ import kotlinx.android.synthetic.main.fragment_1.*
  */
 
 class Fragment1 : Fragment() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,50 +38,58 @@ class Fragment1 : Fragment() {
 
     override fun onViewCreated(view: View, @Nullable savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        callApiGetCovidData()
+        DataCountry.Session(context)
+        DataCountry["Sorted"] = "Confirmed"
+        ApiGetConfirm()
     }
 
-    private fun callApiGetCovidData(){
+    private fun ApiGetConfirm(){
         showLoading(context!!, swipeRefreshLayout)
-        val httpClient = httpClient()
-        val apiRequest = apiRequest<DataService>(httpClient)
-        val call = apiRequest.getAttributes()
-        call.enqueue(object :Callback<List<Attributes>> {
-            override fun onFailure(call: Call<List<Attributes>>, t: Throwable) {
-                dissmissLoading(swipeRefreshLayout)
 
+        val httpClient = httpClient()
+        val apiRequest = apiRequest<DataService>(httpClient, Constant.URL_covid)
+        val call =  apiRequest.getRecovered()
+                    apiRequest.getDeaths()
+                    apiRequest.getConfirmed()
+
+        call.enqueue(object : Callback<List<CovidConfirmedItem>>{
+            override fun onFailure(call: Call<List<CovidConfirmedItem>>, t: Throwable) {
+                tampilToast(context!!, "Gagal" + t.message)
+                dissmissLoading(swipeRefreshLayout)
             }
 
             override fun onResponse(
-                call: Call<List<Attributes>>,
-                response: Response<List<Attributes>>
+                call: Call<List<CovidConfirmedItem>>,
+                response: Response<List<CovidConfirmedItem>>
             ) {
                 dissmissLoading(swipeRefreshLayout)
-                when {
-                    response.isSuccessful->
-                        when{
-                            response.body()?.size!=0->
-                                tampilCovidData(response.body()!!)
+                when{
+                    response.isSuccessful ->{
+                        when {
+                            response.body()?.size != 0 -> {
+                                tampilData(response.body()!!)
+                            }
                             else -> {
-                                tampilToast(context!!,"Berhasil!")
+                                tampilToast(context!!, "Berhasil")
                             }
                         }
-                    else->{
-                        tampilToast(context!!,"Gagal!")
+                    }
+                    else -> {
+                        tampilToast(context!!, "Gagal")
                     }
                 }
             }
-
         })
     }
 
-    private fun tampilCovidData(covidData: List<Attributes>){
+    private fun tampilData(body: List<CovidConfirmedItem>){
         listAttributes.layoutManager = LinearLayoutManager(context)
-        listAttributes.adapter = DataAdapter(context!!,covidData){
-            val covidData = it
-            tampilToast(context!!, covidData.countryRegion )
+        listAttributes.adapter = DataAdapter1(context!!, body) {
+            DataCountry.Session(context)
+            DataCountry["country"] = it.countryRegion
+            val intent = Intent(context, Fragment1::class.java)
+            startActivity(intent)
         }
-
     }
 
     override fun onDestroy() {

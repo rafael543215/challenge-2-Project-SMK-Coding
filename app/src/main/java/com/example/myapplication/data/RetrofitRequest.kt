@@ -19,9 +19,9 @@ import java.util.concurrent.TimeUnit
         return builder.build()
     }
 
-    inline fun<reified T>apiRequest(okHttpClient: OkHttpClient): T{
+    inline fun<reified T>apiRequest(okHttpClient: OkHttpClient, base_url: String): T{
         val gson = GsonBuilder().create()
 
-        val retrofit = Retrofit.Builder().baseUrl("https://api.kawalcorona.com/").client(okHttpClient).addConverterFactory(GsonConverterFactory.create(gson)).build()
+        val retrofit = Retrofit.Builder().baseUrl(base_url).client(okHttpClient).addConverterFactory(GsonConverterFactory.create(gson)).build()
         return retrofit.create(T::class.java)
     }

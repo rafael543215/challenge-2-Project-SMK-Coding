@@ -8,11 +8,11 @@ import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_gejala.*
 import kotlinx.android.synthetic.main.dialog_negatif.view.*
 import kotlinx.android.synthetic.main.dialog_positif.view.*
+import java.lang.reflect.Array
 
 class GejalaActivity : AppCompatActivity() {
 
-    var pilihan = 2
-
+    val pilihan = 2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gejala)
@@ -20,13 +20,6 @@ class GejalaActivity : AppCompatActivity() {
         btn_submitGejala.setOnClickListener { pilihanGejala() }
     }
 
-    private fun pilih1(){
-
-    }
-
-    private fun tampilToast(message: String){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
     private fun pilihanGejala(){
         if (pilihan > 2){
                 val mDialogPositif = LayoutInflater.from(this).inflate(R.layout.dialog_positif, null)
@@ -46,4 +39,35 @@ class GejalaActivity : AppCompatActivity() {
                 mAlertDialog.dismiss() }
         }
     }
+
+     private fun pilih1() {
+
+        val logika1 = 0
+
+        while (logika1 >= 2)
+            radioGroup1.setOnCheckedChangeListener { group, checkedId ->
+            if (checkedId == R.id.radioButton1)
+                logika1 + 1
+        }
+        radioGroup2.setOnCheckedChangeListener { group, checkedId ->
+            if(checkedId == R.id.radioButton3)
+                logika1 + 1
+        }
+        radioGroup3.setOnCheckedChangeListener { group, checkedId ->
+            if(checkedId == R.id.radioButton5)
+                logika1 + 1
+        }
+        radioGroup4.setOnCheckedChangeListener { group, checkedId ->
+            if(checkedId == R.id.radioButton7)
+                logika1 + 1
+        }
+        radioGroup5.setOnCheckedChangeListener { group, checkedId ->
+            if(checkedId == R.id.radioButton9)
+                logika1 + 1
+        }
+         setResult(logika1)
+    }
+
+
 }
+

@@ -94,6 +94,7 @@
                         android:orientation="horizontal">
 
                         <RadioGroup
+                            android:id="@+id/radioGroup1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
@@ -101,7 +102,7 @@
                             >
 
                             <RadioButton
-                                android:id="@+id/radioButton"
+                                android:id="@+id/radioButton1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Batuk Kering"
@@ -143,10 +144,12 @@
                         android:orientation="horizontal">
 
                         <RadioGroup
+                            android:id="@+id/radioGroup2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
-                            android:layout_marginBottom="10dp">
+                            android:layout_marginBottom="10dp"
+                            >
 
                             <RadioButton
                                 android:id="@+id/radioButton4"
@@ -190,6 +193,7 @@
                         android:orientation="horizontal">
 
                         <RadioGroup
+                            android:id="@+id/radioGroup3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
@@ -237,6 +241,7 @@
                         android:orientation="horizontal">
 
                         <RadioGroup
+                            android:id="@+id/radioGroup4"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
@@ -284,6 +289,7 @@
                         android:orientation="horizontal">
 
                         <RadioGroup
+                            android:id="@+id/radioGroup5"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal"
