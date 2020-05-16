@@ -16,10 +16,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/gejala_background">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/iv_berita"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -33,12 +34,37 @@
                 android:layout_weight="5"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tv_judulBerita"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ini Judul Berita"
-                    android:textSize="18sp"
+                    android:textSize="25sp"
                     android:fontFamily="@font/oswald_bold"
                     />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Dikutip Tanggal :"
+                    android:gravity="bottom"
+                    android:textColor="@color/red"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/oswald_bold"/>
+                    <TextView
+                        android:id="@+id/tv_tanggal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Dummy"
+                        android:gravity="bottom"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/black"
+                        />
+                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>

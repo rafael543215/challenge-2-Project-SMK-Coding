@@ -2,22 +2,23 @@ package com.example.myapplication.item
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Article(
-    @SerializedName("source")
-    val source: Source,
     @SerializedName("author")
-    val author: Any,
-    @SerializedName("title")
-    val title: String,
+    val author: String,
+    @SerializedName("content")
+    val content: String,
     @SerializedName("description")
     val description: String,
+    @SerializedName("publishedAt")
+    val publishedAt: String,
+    @SerializedName("source")
+    val source: Source,
+    @SerializedName("title")
+    val title: String,
     @SerializedName("url")
     val url: String,
     @SerializedName("urlToImage")
-    val urlToImage: String,
-    @SerializedName("publishedAt")
-    val publishedAt: String,
-    @SerializedName("content")
-    val content: String
-)
+    val urlToImage: String
+): Serializable

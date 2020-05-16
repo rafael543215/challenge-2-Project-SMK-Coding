@@ -1,11 +1,10 @@
-package com.example.myapplication
+package com.example.myapplication.item
 
 
-import com.example.myapplication.item.Article
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class NewsHealth(
+data class BeritaCovid(
     @SerializedName("status")
     val status: String,
     @SerializedName("totalResults")
