@@ -10,4 +10,5 @@
     <color name="krim">#DFDCC2</color>
     <color name="background">#353B5B</color>
     <color name="red">#F44336</color>
+    <color name="transparent_blue">#CD2222D1</color>
 </resources>

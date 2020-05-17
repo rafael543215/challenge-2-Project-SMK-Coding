@@ -34,6 +34,10 @@ class DataAdapter2 (
             Glide.with(context).load(item.urlToImage).into(iv_berita)
             tv_judulBerita.text = item.title
             tv_tanggal.text = item.publishedAt
+            tv_source.text = item.source.name
+            click_news.setOnClickListener {
+                listener(item)
+            }
         }
 
     }

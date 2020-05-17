@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Fragment2"
-    android:orientation="vertical">
 
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".Fragment2"
+        android:orientation="vertical">
     <LinearLayout
         android:id="@+id/background"
         android:layout_width="match_parent"
@@ -23,20 +28,224 @@
         android:layout_margin="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/background">
+        app:layout_constraintTop_toBottomOf="@+id/background"
+        android:orientation="vertical">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/click_news1"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
 
-        <RelativeLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_news_foreground" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:padding="2dp"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_judul1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Berita 1 Covid"
+                        android:textSize="25sp"
+                        android:fontFamily="@font/oswald_bold"
+                        />
+                    <TextView
+                        android:id="@+id/tv_source1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Source :  Seputar Putar Indonesia"
+                        android:fontFamily="@font/oswald_bold"
+                        android:layout_marginTop="5dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Dikutip Tanggal :"
+                            android:gravity="bottom"
+                            android:textColor="@color/red"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/oswald_bold"/>
+                        <TextView
+                            android:id="@+id/tv_kutip1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="17/05/2020"
+                            android:gravity="bottom"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/click_news2"
+            android:layout_margin="10dp"
+            android:padding="5dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listBerita"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_news_foreground" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:padding="2dp"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_judul2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Berita 2 Covid"
+                        android:textSize="25sp"
+                        android:fontFamily="@font/oswald_bold"
+                        />
+                    <TextView
+                        android:id="@+id/tv_source2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Source :  Liputan 5 Subuh"
+                        android:fontFamily="@font/oswald_bold"
+                        android:layout_marginTop="5dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Dikutip Tanggal :"
+                            android:gravity="bottom"
+                            android:textColor="@color/red"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/oswald_bold"/>
+                        <TextView
+                            android:id="@+id/tv_kutip2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="16/05/2020"
+                            android:gravity="bottom"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/click_news3"
+            android:layout_margin="10dp"
+            android:padding="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        </RelativeLayout>
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_news_foreground" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:padding="2dp"
+                    android:layout_weight="5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_judul3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Berita 3 Covid "
+                        android:textSize="25sp"
+                        android:fontFamily="@font/oswald_bold"
+                        />
+                    <TextView
+                        android:id="@+id/tv_source3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Source :  Buletin Bumi Bundar"
+                        android:fontFamily="@font/oswald_bold"
+                        android:layout_marginTop="5dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Dikutip Tanggal :"
+                            android:gravity="bottom"
+                            android:textColor="@color/red"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/oswald_bold"/>
+                        <TextView
+                            android:id="@+id/tv_kutip3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="15/05/2020"
+                            android:gravity="bottom"
+                            android:fontFamily="sans-serif"
+                            android:textColor="@color/black"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     </LinearLayout>
     
-    
-    
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

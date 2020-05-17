@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".Berita3"
+        >
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            app:srcCompat="@drawable/ic_top" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_judulBerita3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/archivo_black"
+                android:textSize="30sp"
+                android:textColor="@color/design_default_color_primary"
+                android:text="Judul Berita" />
+
+
+            <TextView
+                android:id="@+id/deskripsi3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seluruh hotel dan tempat wisata di Kota Batu telah berhenti beroperasi sejak pekan pertama sampai 30 April 2020. Tidak menutup kemungkinan, penutupan bakal diperpanjang demi mencegah penyebaran Corona Covid-19 di kota tersebut.
+
+Jumlah positif terinfeksi Corona Covid-19 di Kota Batu sampai hari ini ada 3 kasus (1 sembuh). Sebanyak 22 Pasien Dalam Pengawasan (10 sehat dan 2 meninggal) dan 162 Orang Dalam Pantauan (120 selesai dipantau). Sebanyak 120 Orang Tanpa Gejala dan 1.589 Orang Dengan Risiko."
+                android:layout_margin="20dp"
+                />
+            <TextView
+                android:id="@+id/tv_sourceBerita3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Source" />
+
+            <TextView
+                android:id="@+id/tv_kutipBerita3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal rilis"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

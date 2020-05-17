@@ -8,6 +8,7 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/click_news"
         android:layout_margin="10dp"
         android:padding="5dp"
         android:layout_width="match_parent"
@@ -41,6 +42,13 @@
                     android:textSize="25sp"
                     android:fontFamily="@font/oswald_bold"
                     />
+                <TextView
+                    android:id="@+id/tv_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Source :  dummy"
+                    android:fontFamily="@font/oswald_bold"
+                    android:layout_marginTop="5dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

@@ -1,6 +1,5 @@
 package com.example.myapplication.data
 
-import com.example.myapplication.item.Article
 import com.example.myapplication.item.BeritaCovid
 import com.example.myapplication.item.CovidConfirmedItem
 import retrofit2.Call
@@ -17,8 +16,7 @@ interface DataService {
     @GET("api/recovered")
     fun getRecovered(): Call<List<CovidConfirmedItem>>
 
-
-    @GET("v2/top-headlines")
+    @GET("/v2/top-headlines")
     fun getNews(
         @Query("country") country: String,
         @Query("category") category: String,
