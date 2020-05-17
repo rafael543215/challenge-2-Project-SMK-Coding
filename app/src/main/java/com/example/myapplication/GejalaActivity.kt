@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.dialog_positif.view.*
 class GejalaActivity : AppCompatActivity() {
 
     var pilihan : Int? = 0
-    val angka : Int? = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gejala)
@@ -43,8 +42,7 @@ class GejalaActivity : AppCompatActivity() {
 
     private fun pilihanGejala(){
 
-        var i = pilihan
-        while (pilihan == i) {
+
             radioGroup1.setOnCheckedChangeListener { group, checkedId ->
                 if (checkedId == R.id.radioButton1)
                     pilihan = pilihan?.inc()
@@ -65,8 +63,6 @@ class GejalaActivity : AppCompatActivity() {
                 if (checkedId == R.id.radioButton9)
                     pilihan = pilihan?.inc()
             }
-        }
-
     }
 
 
