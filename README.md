@@ -1,10 +1,13 @@
 # challenge-2-Project-SMK-Coding
 ## Aplikasi Seputar Corona
 
-Aplikasi tentang COVID-19
-Sumber API : 
+Aplikasi tentang Corona
 
-[title](https://covid19.mathdro.id/)
+Link: (https://docs.google.com/uc?export=download&id=1DMS6z0WbetkLZsNOU9e1KqV8NEG_GQ6a)
+
+Sumber Api
+
+(https://covid19.mathdro.id/)
 
 ## Halaman Rasio
 
